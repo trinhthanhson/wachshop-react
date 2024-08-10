@@ -50,31 +50,29 @@ const Routers = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const [role, setRole] = useState(null)
-  const [isLoggedIn, setIsLoggedIn] = useState(true)
   const roleName = localStorage.getItem('role_name')
 
   const decryptedRole = decryptData(roleName)
   setRole(decryptedRole)
 
   useEffect(() => {
-    if (isLoggedIn) {
-      if (role === 'MANAGER' || role === 'STAFF') {
-        // Redirect to /manager if the user is a manager or staff and is on /buynow or /
-        if (location.pathname === '/buynow' || location.pathname === '/') {
-          navigate('/manager')
-        }
-      } else if (role === 'SHIPPER') {
-        if (location.pathname === '/buynow' || location.pathname === '/') {
-          navigate('/manager/shipper')
-        }
+    if (role === 'MANAGER' || role === 'STAFF') {
+      // Redirect to /manager if the user is a manager or staff and is on /buynow or /
+      if (location.pathname === '/buynow' || location.pathname === '/') {
+        navigate('/manager')
+      }
+    } else if (role === 'SHIPPER') {
+      if (location.pathname === '/buynow' || location.pathname === '/') {
+        navigate('/manager/shipper')
       }
     }
+
     if (role === 'CUSTOMER') {
       if (location.pathname.startsWith('/manager')) {
         navigate('/home')
       }
     }
-  }, [role, location.pathname, navigate, isLoggedIn])
+  }, [role, location.pathname, navigate])
   // Your component code here
 
   return (
