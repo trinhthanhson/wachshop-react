@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './authStyle.css'
 import Helmet from '../../components/Helmet/Helmet'
@@ -61,7 +61,6 @@ const Login = () => {
           localStorage.setItem('token', token)
           // Dispatch action to fetch user profile
           await dispatch(getUserProfileRequest())
-          localStorage.setItem('role_name', encryptData(userRole))
 
           console.log('Đăng nhập thành công')
         } else {
@@ -77,11 +76,25 @@ const Login = () => {
         setIsLoggingIn(false)
       }
     }, 300),
-    [username, password, dispatch, userRole]
+    [username, password, dispatch]
   )
 
   // Điều hướng sau khi dữ liệu người dùng được cập nhật
-
+  useEffect(() => {
+    if (userRole) {
+      localStorage.setItem('role_name', encryptData(userRole))
+      if (userRole === 'MANAGER' || userRole === 'STAFF') {
+        navigate('/manager')
+      } else if (userRole === 'CUSTOMER') {
+        if (location.pathname.startsWith('/manager')) {
+          navigate('/home')
+        }
+        navigate('/home')
+      } else if (userRole === 'SHIPPER') {
+        navigate('/manager/shipper')
+      }
+    }
+  }, [userRole, navigate])
   const handleForgotPassword = () => {
     setShowForgotPassword(true)
   }
