@@ -19,7 +19,7 @@ const Signup = () => {
   const [loading, setLoading] = useState(false)
 
   const handleGoBack = () => {
-    navigate('/login')
+    navigate('/')
   }
 
   const handleGoHome = () => {
@@ -107,7 +107,7 @@ const Signup = () => {
       )
       const { code } = response.data
       if (code === 201) {
-        navigate('/login')
+        navigate('/')
         console.log('Đăng ký thành công')
       } else {
         setOtpError('OTP không chính xác')

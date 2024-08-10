@@ -11,7 +11,7 @@ const Header = () => {
   const navigate = useNavigate()
 
   const handleLogout = () => {
-    window.location.href = '/login'
+    window.location.href = '/'
     localStorage.removeItem('token')
   }
 

@@ -96,7 +96,7 @@ const Routers = () => {
     <Routes>
       <Route path="*" element={<Page404 />} />
       <Route index element={<Login />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/profile" element={<CustomerProfile />} />
       <Route path="/home" element={<Home />} />

@@ -7,7 +7,7 @@ const ProtectedRoute = ({ element: Component, roles }) => {
   const user = useSelector((state) => state.userProfile.user)
 
   if (!user) {
-    return <Navigate to="/login" />
+    return <Navigate to="/" />
   }
 
   if (roles && !roles.includes(user.role)) {

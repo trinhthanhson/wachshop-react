@@ -26,7 +26,7 @@ const Sidebar = () => {
   }, [dispatch])
   const handleLogout = () => {
     localStorage.removeItem('token')
-    window.location.href = '/login'
+    window.location.href = '/'
   }
   const [hoveredIndex, setHoveredIndex] = useState(null)
   const isManager = user?.user?.role.role_name === 'MANAGER'
