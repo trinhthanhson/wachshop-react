@@ -1,21 +1,24 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './authStyle.css'
 import Helmet from '../../components/Helmet/Helmet'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { getUserProfileRequest } from '../../redux/actions/actions'
 import CoffeeCanvas from '../../components/Canvas/Coffee'
+import { encryptData } from '../../cryptoUtils/cryptoUtils'
 import debounce from 'lodash/debounce'
 
 const Login = () => {
   const dispatch = useDispatch()
+  const user = useSelector((state) => state.user.user.data)
   const navigate = useNavigate()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [showForgotPassword, setShowForgotPassword] = useState(false)
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const userRole = user?.user?.role.role_name
   const [isLoggingIn, setIsLoggingIn] = useState(false)
   const [loading, setLoading] = useState(false)
   const handleGoHome = () => {
@@ -77,7 +80,18 @@ const Login = () => {
   )
 
   // Điều hướng sau khi dữ liệu người dùng được cập nhật
-
+  useEffect(() => {
+    if (userRole === 'MANAGER' || userRole === 'STAFF') {
+      navigate('/manager')
+    } else if (userRole === 'CUSTOMER') {
+      if (location.pathname.startsWith('/manager')) {
+        navigate('/home')
+      }
+      navigate('/home')
+    } else if (userRole === 'SHIPPER') {
+      navigate('/manager/shipper')
+    }
+  }, [userRole, navigate])
   const handleForgotPassword = () => {
     setShowForgotPassword(true)
   }
