@@ -50,26 +50,11 @@ const Routers = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const [role, setRole] = useState(null)
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  useEffect(() => {
-    // Lấy role từ localStorage và giải mã
-    const roleName = localStorage.getItem('role_name')
-    if (roleName) {
-      try {
-        const decryptedRole = decryptData(roleName)
-        setRole(decryptedRole)
-        if (
-          decryptedRole === 'MANAGER' ||
-          decryptedRole === 'STAFF' ||
-          decryptedRole === 'SHIPPER'
-        ) {
-          setIsLoggedIn(true)
-        }
-      } catch (error) {
-        console.error('Error decrypting role:', error)
-      }
-    }
-  }, [])
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
+  const roleName = localStorage.getItem('role_name')
+
+  const decryptedRole = decryptData(roleName)
+  setRole(decryptedRole)
 
   useEffect(() => {
     if (isLoggedIn) {
