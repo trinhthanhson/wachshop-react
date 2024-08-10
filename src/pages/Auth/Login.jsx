@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { getUserProfileRequest } from '../../redux/actions/actions'
 import CoffeeCanvas from '../../components/Canvas/Coffee'
-import { encryptData } from '../../cryptoUtils/cryptoUtils'
 import debounce from 'lodash/debounce'
 
 const Login = () => {
@@ -42,7 +41,7 @@ const Login = () => {
         setIsLoggingIn(true)
 
         const response = await axios.post(
-          'http://localhost:9999/api/auth/sign-in',
+          'https://watchshop-backend.onrender.com/api/auth/sign-in',
           {
             username,
             password
