@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Home from '../pages/Home'
 import About from '../pages/About/About'
 import Origin from '../pages/About/Origin'
@@ -40,56 +39,12 @@ import AllBrand from '../Admin/pages/AllBrand'
 import AllStaff from '../Admin/pages/AllStaff'
 import AdminUserStaffDetail from '../Admin/pages/AdminUserStaffDetail'
 import AllCouponDetail from '../Admin/pages/AllCouponDetail'
-import { decryptData } from '../cryptoUtils/cryptoUtils'
 import ProductByBrand from '../pages/Menu/ProductByBrand'
 import OrderAcceptShipper from '../Admin/pages/OrderAcceptShipper'
 import OrderShipperDetail from '../Admin/pages/OrderShipperDetail'
 import OrderReceiveShipper from '../Admin/pages/OrderReceiveShipper'
 
 const Routers = () => {
-  const navigate = useNavigate()
-  const location = useLocation()
-  const [role, setRole] = useState(null)
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  useEffect(() => {
-    // Lấy role từ localStorage và giải mã
-    const roleName = localStorage.getItem('role_name')
-    if (roleName) {
-      try {
-        const decryptedRole = decryptData(roleName)
-        setRole(decryptedRole)
-        if (
-          decryptedRole === 'MANAGER' ||
-          decryptedRole === 'STAFF' ||
-          decryptedRole === 'SHIPPER'
-        ) {
-          setIsLoggedIn(true)
-        }
-      } catch (error) {
-        console.error('Error decrypting role:', error)
-      }
-    }
-  }, [])
-
-  useEffect(() => {
-    if (isLoggedIn) {
-      if (role === 'MANAGER' || role === 'STAFF') {
-        // Redirect to /manager if the user is a manager or staff and is on /buynow or /
-        if (location.pathname === '/buynow' || location.pathname === '/') {
-          navigate('/manager')
-        }
-      } else if (role === 'SHIPPER') {
-        if (location.pathname === '/buynow' || location.pathname === '/') {
-          navigate('/manager/shipper')
-        }
-      }
-    }
-    if (role === 'CUSTOMER') {
-      if (location.pathname.startsWith('/manager')) {
-        navigate('/home')
-      }
-    }
-  }, [role, location.pathname, navigate, isLoggedIn])
   // Your component code here
 
   return (
