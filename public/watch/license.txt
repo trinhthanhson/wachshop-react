@@ -1,0 +1,11 @@
+Model Information:
+* title:	Patek Philippe Two-Crown Worldtime
+* source:	https://sketchfab.com/3d-models/patek-philippe-two-crown-worldtime-8dcbe0f77aba4a58ada60048387b12c8
+* author:	ar-watches (https://sketchfab.com/ar-watches)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Patek Philippe Two-Crown Worldtime" (https://sketchfab.com/3d-models/patek-philippe-two-crown-worldtime-8dcbe0f77aba4a58ada60048387b12c8) by ar-watches (https://sketchfab.com/ar-watches) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
