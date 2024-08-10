@@ -9,7 +9,7 @@ function* getAllBrandSaga() {
     const token = localStorage.getItem('token')
     const response = yield call(
       axios.get,
-      'http://localhost:9999/api/user/brand/all',
+      'https://watchshop-backend.onrender.com/api/user/brand/all',
       {
         headers: {
           Authorization: `Bearer ${token}`

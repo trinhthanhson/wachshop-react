@@ -22,7 +22,7 @@ const OrderReceiveShipper = () => {
       try {
         const token = localStorage.getItem('token') // Adjust based on where you store the token
         const response = await axios.get(
-          'http://localhost:9999/api/staff/order/all/shipper',
+          'https://watchshop-backend.onrender.com/api/staff/order/all/shipper',
           {
             headers: {
               Authorization: `Bearer ${token}`

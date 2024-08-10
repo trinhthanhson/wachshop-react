@@ -8,7 +8,7 @@ function* addProduct(action) {
 
     // Gọi API để thêm sản phẩm
     const response = yield call(() =>
-      fetch(`http://localhost:9999/api/staff/product/add`, {
+      fetch(`https://watchshop-backend.onrender.com/api/staff/product/add`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

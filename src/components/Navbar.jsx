@@ -28,8 +28,10 @@ const Navbar = () => {
     const fetchCategoriesAndBrands = async () => {
       try {
         const [categoriesResponse, brandsResponse] = await Promise.all([
-          axios.get('http://localhost:9999/api/user/category/all'),
-          axios.get('http://localhost:9999/api/user/brand/all')
+          axios.get(
+            'https://watchshop-backend.onrender.com/api/user/category/all'
+          ),
+          axios.get('https://watchshop-backend.onrender.com/api/user/brand/all')
         ])
         setCategories(categoriesResponse.data.data)
         setBrands(brandsResponse.data.data)

@@ -24,7 +24,7 @@ const AllCoupons = () => {
 
     try {
       await axios.delete(
-        `http://localhost:9999/api/staff/coupon/${couponId}/delete`,
+        `https://watchshop-backend.onrender.com/api/staff/coupon/${couponId}/delete`,
         {
           headers: {
             Authorization: `Bearer ${token}` // Thêm header Authorization

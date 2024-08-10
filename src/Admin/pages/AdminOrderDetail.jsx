@@ -32,7 +32,7 @@ const AdminOrderDetail = () => {
       const token = localStorage.getItem('token')
       axios
         .put(
-          `http://localhost:9999/api/staff/order/${id}/status`,
+          `https://watchshop-backend.onrender.com/api/staff/order/${id}/status`,
           { status: '4' },
           {
             headers: {
@@ -56,7 +56,7 @@ const AdminOrderDetail = () => {
       console.log(newStatus)
       axios
         .put(
-          `http://localhost:9999/api/staff/order/${id}/status`,
+          `https://watchshop-backend.onrender.com/api/staff/order/${id}/status`,
           { status: newStatus },
           {
             headers: {

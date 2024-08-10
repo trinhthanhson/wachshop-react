@@ -42,7 +42,7 @@ const Login = () => {
         setIsLoggingIn(true)
 
         const response = await axios.post(
-          'http://localhost:9999/api/auth/sign-in',
+          'https://watchshop-backend.onrender.com/api/auth/sign-in',
           {
             username,
             password
@@ -115,7 +115,7 @@ const Login = () => {
     setLoading(true)
     try {
       const response = await axios.post(
-        'http://localhost:9999/api/auth/forgot-password',
+        'https://watchshop-backend.onrender.com/api/auth/forgot-password',
         { email }
       )
       const { code, message } = response.data

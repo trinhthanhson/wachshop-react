@@ -31,7 +31,7 @@ const AllProducts = () => {
     if (confirmDelete) {
       try {
         await axios.delete(
-          `http://localhost:9999/api/staff/product/${productId}/delete`,
+          `https://watchshop-backend.onrender.com/api/staff/product/${productId}/delete`,
           {
             headers: {
               Authorization: `Bearer ${token}`

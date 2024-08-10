@@ -7,14 +7,17 @@ function* updateProduct(action) {
     const token = localStorage.getItem('token')
 
     const response = yield call(() =>
-      fetch(`http://localhost:9999/api/staff/product/${id}/update`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`
-        },
-        body: JSON.stringify(dataToSend)
-      })
+      fetch(
+        `https://watchshop-backend.onrender.com/api/staff/product/${id}/update`,
+        {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`
+          },
+          body: JSON.stringify(dataToSend)
+        }
+      )
     )
 
     if (!response.ok) {

@@ -14,7 +14,7 @@ function* addCart(action) {
 
     const response = yield call(
       axios.put,
-      'http://localhost:9999/api/customer/cart/add',
+      'https://watchshop-backend.onrender.com/api/customer/cart/add',
       body,
       {
         headers: {

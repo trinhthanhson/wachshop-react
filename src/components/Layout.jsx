@@ -7,7 +7,7 @@ const Layout = () => {
   const location = useLocation()
 
   const isAdminPage = location.pathname.startsWith('/manager')
-  const isLoginPage = location.pathname === '/login'
+  const isLoginPage = location.pathname === '/'
   const isSignupPage = location.pathname === '/signup'
   const isForgotPasswordPage = location.pathname === '/forgotPassword'
   const isIndexPage = location.pathname === '/'

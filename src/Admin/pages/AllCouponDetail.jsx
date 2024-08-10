@@ -23,7 +23,7 @@ const AllCouponDetail = () => {
     if (confirmDelete) {
       try {
         await axios.put(
-          `http://localhost:9999/api/staff/coupon/${couponId}/delete`,
+          `https://watchshop-backend.onrender.com/api/staff/coupon/${couponId}/delete`,
           {
             status: status
           },

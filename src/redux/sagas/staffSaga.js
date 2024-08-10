@@ -10,7 +10,7 @@ function* getAllStaffsSaga() {
 
     const response = yield call(
       axios.get,
-      'http://localhost:9999/api/manager/staff/all',
+      'https://watchshop-backend.onrender.com/api/manager/staff/all',
       {
         headers: {
           Authorization: `Bearer ${token}`

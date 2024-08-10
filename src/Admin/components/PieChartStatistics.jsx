@@ -20,7 +20,7 @@ const PieChartStatistics = () => {
       try {
         const token = localStorage.getItem('token')
         const response = await axios.get(
-          'http://localhost:9999/api/staff/statistic/product',
+          'https://watchshop-backend.onrender.com/api/staff/statistic/product',
           {
             headers: {
               Authorization: `Bearer ${token}`

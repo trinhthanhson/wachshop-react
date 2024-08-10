@@ -11,7 +11,7 @@ function* getAllProductsCustomerSaga() {
   try {
     const response = yield call(
       axios.get,
-      'http://localhost:9999/api/user/product/all'
+      'https://watchshop-backend.onrender.com/api/user/product/all'
     )
 
     yield put(getAllProductsCustomerSuccess(response.data))

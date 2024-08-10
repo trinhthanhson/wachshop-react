@@ -68,7 +68,7 @@ const CustomerProfile = () => {
   const handleSave = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:9999/api/customer/update-info`,
+        `https://watchshop-backend.onrender.com/api/customer/update-info`,
         formData,
         {
           headers: {
@@ -92,7 +92,7 @@ const CustomerProfile = () => {
     try {
       // eslint-disable-next-line no-unused-vars
       const response = await axios.put(
-        `http://localhost:9999/api/user/change-password`,
+        `https://watchshop-backend.onrender.com/api/user/change-password`,
         passwordData,
         {
           headers: {

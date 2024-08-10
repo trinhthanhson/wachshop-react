@@ -7,7 +7,7 @@ function* addCoupon(action) {
 
     const response = yield call(
       axios.post,
-      'http://localhost:9999/api/staff/coupon/add',
+      'https://watchshop-backend.onrender.com/api/staff/coupon/add',
       action.payload,
       {
         headers: {

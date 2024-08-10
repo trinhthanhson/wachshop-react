@@ -18,7 +18,7 @@ const ColumnChartStatistics = () => {
       try {
         const token = localStorage.getItem('token')
         const response = await fetch(
-          `http://localhost:9999/api/staff/statistic/year?year=${selectedYear}`,
+          `https://watchshop-backend.onrender.com/api/staff/statistic/year?year=${selectedYear}`,
           {
             headers: {
               Authorization: `Bearer ${token}`

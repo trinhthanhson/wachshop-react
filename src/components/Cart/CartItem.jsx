@@ -13,7 +13,8 @@ const CartItem = ({ cart, onQuantityChange, onDeleteSuccess }) => {
   const handleQuantityChange = async (newQuantity) => {
     if (newQuantity >= 1) {
       try {
-        const apiUrl = 'http://localhost:9999/api/customer/cart/update/quantity'
+        const apiUrl =
+          'https://watchshop-backend.onrender.com/api/customer/cart/update/quantity'
         const requestBody = {
           product_id: product?.product_id,
           quantity: newQuantity
@@ -38,7 +39,8 @@ const CartItem = ({ cart, onQuantityChange, onDeleteSuccess }) => {
 
   const handleDelete = async () => {
     try {
-      const apiUrl = 'http://localhost:9999/api/customer/cart/delete/item'
+      const apiUrl =
+        'https://watchshop-backend.onrender.com/api/customer/cart/delete/item'
       const requestBody = {
         product_id: product?.product_id
       }

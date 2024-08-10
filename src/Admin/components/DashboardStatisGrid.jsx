@@ -33,7 +33,7 @@ const DashboardStatisGrid = () => {
       try {
         const token = localStorage.getItem('token')
         const response = await axios.get(
-          'http://localhost:9999/api/staff/statistic/sales',
+          'https://watchshop-backend.onrender.com/api/staff/statistic/sales',
           {
             headers: {
               Authorization: `Bearer ${token}`,

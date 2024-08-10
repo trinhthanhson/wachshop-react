@@ -10,7 +10,7 @@ function* getAllCartSaga() {
 
     const response = yield call(
       axios.get,
-      'http://localhost:9999/api/customer/cart/',
+      'https://watchshop-backend.onrender.com/api/customer/cart/',
       {
         headers: {
           Authorization: `Bearer ${token}`

@@ -13,7 +13,7 @@ function* getUserProfileSaga() {
 
     const response = yield call(
       axios.get,
-      'http://localhost:9999/api/user/find',
+      'https://watchshop-backend.onrender.com/api/user/find',
       {
         headers: {
           Authorization: `Bearer ${token}`

@@ -103,7 +103,7 @@ const Checkout = () => {
     const total_price = cart?.data?.total_price + 20000
     try {
       const response = await fetch(
-        'http://localhost:9999/api/customer/order/buy-cart',
+        'https://watchshop-backend.onrender.com/api/customer/order/buy-cart',
         {
           method: 'POST',
           headers: {
@@ -151,7 +151,7 @@ const Checkout = () => {
     const total_price = cart?.data?.total_price + 20000
     try {
       const response = await fetch(
-        'http://localhost:9999/api/customer/payment/cart',
+        'https://watchshop-backend.onrender.com/api/customer/payment/cart',
         {
           method: 'POST',
           headers: {

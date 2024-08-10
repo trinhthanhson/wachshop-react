@@ -10,7 +10,7 @@ function* getAllRoleSaga() {
 
     const response = yield call(
       axios.get,
-      'http://localhost:9999/api/manager/role/all',
+      'https://watchshop-backend.onrender.com/api/manager/role/all',
       {
         headers: {
           Authorization: `Bearer ${token}`

@@ -7,7 +7,7 @@ function* addOrder(action) {
     const token = localStorage.getItem('token')
     const response = yield call(
       axios.post,
-      'http://localhost:9999/api/order/create',
+      'https://watchshop-backend.onrender.com/api/order/create',
       action.payload,
       {
         headers: {

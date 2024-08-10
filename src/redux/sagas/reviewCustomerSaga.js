@@ -13,7 +13,7 @@ function* getAllReviewCustomerSaga() {
 
     const response = yield call(
       axios.get,
-      'http://localhost:9999/api/customer/review/all',
+      'https://watchshop-backend.onrender.com/api/customer/review/all',
       {
         headers: {
           Authorization: `Bearer ${token}`

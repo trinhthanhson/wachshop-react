@@ -83,7 +83,7 @@ const OrderBuyNow = () => {
 
     try {
       const response = await fetch(
-        'http://localhost:9999/api/customer/order/buy-now',
+        'https://watchshop-backend.onrender.com/api/customer/order/buy-now',
         {
           method: 'POST',
           headers: {
@@ -130,7 +130,7 @@ const OrderBuyNow = () => {
 
     try {
       const response = await fetch(
-        'http://localhost:9999/api/customer/payment/submit',
+        'https://watchshop-backend.onrender.com/api/customer/payment/submit',
         {
           method: 'POST',
           headers: {
