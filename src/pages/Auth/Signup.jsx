@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom'
 import './authStyle.css'
-import Helmet from '../../components/Helmet/Helmet'
 import axios from 'axios'
 import { useState } from 'react'
 
@@ -120,181 +119,176 @@ const Signup = () => {
   }
 
   return (
-    <Helmet title="Signup">
-      <div className="w-full h-full relative z-[-1]">
+    <div className="w-full h-full relative z-[-1]">
+      <img
+        className="fixed h-full w-full"
+        src="https://firebasestorage.googleapis.com/v0/b/watch-shop-3a14f.appspot.com/o/images%2Fbackground.jpg?alt=media&token=edae71b6-7155-4d79-b78c-636c0a929ce6"
+        alt="Background"
+      />
+      <img
+        onClick={handleGoHome}
+        className="absolute cursor-pointer w-[100px] h-[80px] ml-3 py-[10px] pl-3"
+        src="https://firebasestorage.googleapis.com/v0/b/watch-shop-3a14f.appspot.com/o/images%2Flogo.png?alt=media&token=ff560732-bd5c-43d0-9271-7bcd3d9204ea"
+        alt="Logo"
+      />
+      <div
+        className="cursor-pointer layout_login absolute flex-col justify-center items-center mt-[10%] ml-[30%] w-[40%] rounded-[15px]"
+        style={{
+          backgroundColor: 'rgb(6 6 6 / 50%)',
+          height: isOtpSent ? '300px' : '550px'
+        }}
+      >
         <img
-          className="fixed h-full w-full"
-          src="https://firebasestorage.googleapis.com/v0/b/watch-shop-3a14f.appspot.com/o/images%2Fbackground.jpg?alt=media&token=edae71b6-7155-4d79-b78c-636c0a929ce6"
-          alt="Background"
+          onClick={handleGoBack}
+          className="w-[24px] h-[24px] ml-4 bg-white"
+          src="https://icons.veryicon.com/png/o/miscellaneous/arrows/go-back-2.png"
+          alt="Go back"
         />
-        <img
-          onClick={handleGoHome}
-          className="absolute cursor-pointer w-[100px] h-[80px] ml-3 py-[10px] pl-3"
-          src="https://firebasestorage.googleapis.com/v0/b/watch-shop-3a14f.appspot.com/o/images%2Flogo.png?alt=media&token=ff560732-bd5c-43d0-9271-7bcd3d9204ea"
-          alt="Logo"
-        />
-        <div
-          className="cursor-pointer layout_login absolute flex-col justify-center items-center mt-[10%] ml-[30%] w-[40%] rounded-[15px]"
-          style={{
-            backgroundColor: 'rgb(6 6 6 / 50%)',
-            height: isOtpSent ? '300px' : '550px'
-          }}
-        >
-          <img
-            onClick={handleGoBack}
-            className="w-[24px] h-[24px] ml-4 bg-white"
-            src="https://icons.veryicon.com/png/o/miscellaneous/arrows/go-back-2.png"
-            alt="Go back"
-          />
-          <h1 className="text-center mb-8 font-bold text-[25px] text-main text-white">
-            {isOtpSent ? 'Nhập OTP' : 'Thông Tin Đăng Ký'}
-          </h1>
+        <h1 className="text-center mb-8 font-bold text-[25px] text-main text-white">
+          {isOtpSent ? 'Nhập OTP' : 'Thông Tin Đăng Ký'}
+        </h1>
 
-          {isOtpSent ? (
-            <>
-              <div className="input">
-                <label className="text-white">OTP</label>
-                <input
-                  type="text"
-                  value={otp}
-                  onChange={handleOtpChange}
-                  className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
-                />
-              </div>
-              {otpError && (
-                <p
-                  className="text-center"
-                  style={{ color: 'rgb(255 191 124)' }}
-                >
-                  {otpError}
-                </p>
-              )}
-              <div className="btn_submit">
-                <button className="w-fit" type="submit" onClick={handleSignup}>
-                  Xác Nhận OTP
-                </button>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="input">
-                <label className="text-white">Username</label>
-                <input
-                  type="text"
-                  value={username}
-                  onChange={handleUsernameChange}
-                  className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
-                />
-              </div>
-              {errors.username && (
-                <p
-                  className="text-center "
-                  style={{ color: 'rgb(255 191 124)', marginLeft: '120px' }}
-                >
-                  {errors.username}
-                </p>
-              )}
-              <div className="input">
-                <label className="text-white">Mật khẩu</label>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={handlePasswordChange}
-                  className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
-                />
-              </div>
-              {errors.password && (
-                <p
-                  className="text-red-500 text-center "
-                  style={{ color: 'rgb(255 191 124)', marginLeft: '120px' }}
-                >
-                  {errors.password}
-                </p>
-              )}
-              <div className="input">
-                <label className="text-white">Nhập lại mật khẩu</label>
-                <input
-                  type="password"
-                  value={repassword}
-                  onChange={handleRepasswordChange}
-                  className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
-                />
-              </div>
-              {errors.repassword && (
-                <p
-                  className="text-red-500 text-center "
-                  style={{ color: 'rgb(255 191 124)', marginLeft: '80px' }}
-                >
-                  {errors.repassword}
-                </p>
-              )}
-              <div className="input">
-                <label className="text-white">Họ</label>
-                <input
-                  type="text"
-                  value={firstname}
-                  onChange={handleFirstnameChange}
-                  className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
-                />
-              </div>
-              {errors.firstname && (
-                <p
-                  className="text-center "
-                  style={{ color: 'rgb(255 191 124)', marginLeft: '80px' }}
-                >
-                  {errors.firstname}
-                </p>
-              )}
-              <div className="input">
-                <label className="text-white">Tên</label>
-                <input
-                  type="text"
-                  value={lastname}
-                  onChange={handleLastnameChange}
-                  className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
-                />
-              </div>
-              {errors.lastname && (
-                <p
-                  className=" text-center "
-                  style={{ color: 'rgb(255 191 124)', marginLeft: '80px' }}
-                >
-                  {errors.lastname}
-                </p>
-              )}
-              <div className="input">
-                <label className="text-white">Email</label>
-                <input
-                  pattern="@"
-                  type="email"
-                  value={email}
-                  onChange={handleEmailChange}
-                  className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
-                />
-              </div>
-              {errors.email && (
-                <p
-                  className=" text-center "
-                  style={{ color: 'rgb(255 191 124)', marginLeft: '90px' }}
-                >
-                  {errors.email}
-                </p>
-              )}
-              <div className="btn_submit">
-                <button
-                  className={`w-fit ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
-                  type="submit"
-                  onClick={handleSentOtp}
-                  disabled={loading}
-                >
-                  {loading ? 'Đang gửi...' : 'Đăng Ký'}
-                </button>
-              </div>
-            </>
-          )}
-        </div>
+        {isOtpSent ? (
+          <>
+            <div className="input">
+              <label className="text-white">OTP</label>
+              <input
+                type="text"
+                value={otp}
+                onChange={handleOtpChange}
+                className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
+              />
+            </div>
+            {otpError && (
+              <p className="text-center" style={{ color: 'rgb(255 191 124)' }}>
+                {otpError}
+              </p>
+            )}
+            <div className="btn_submit">
+              <button className="w-fit" type="submit" onClick={handleSignup}>
+                Xác Nhận OTP
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="input">
+              <label className="text-white">Username</label>
+              <input
+                type="text"
+                value={username}
+                onChange={handleUsernameChange}
+                className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
+              />
+            </div>
+            {errors.username && (
+              <p
+                className="text-center "
+                style={{ color: 'rgb(255 191 124)', marginLeft: '120px' }}
+              >
+                {errors.username}
+              </p>
+            )}
+            <div className="input">
+              <label className="text-white">Mật khẩu</label>
+              <input
+                type="password"
+                value={password}
+                onChange={handlePasswordChange}
+                className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
+              />
+            </div>
+            {errors.password && (
+              <p
+                className="text-red-500 text-center "
+                style={{ color: 'rgb(255 191 124)', marginLeft: '120px' }}
+              >
+                {errors.password}
+              </p>
+            )}
+            <div className="input">
+              <label className="text-white">Nhập lại mật khẩu</label>
+              <input
+                type="password"
+                value={repassword}
+                onChange={handleRepasswordChange}
+                className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
+              />
+            </div>
+            {errors.repassword && (
+              <p
+                className="text-red-500 text-center "
+                style={{ color: 'rgb(255 191 124)', marginLeft: '80px' }}
+              >
+                {errors.repassword}
+              </p>
+            )}
+            <div className="input">
+              <label className="text-white">Họ</label>
+              <input
+                type="text"
+                value={firstname}
+                onChange={handleFirstnameChange}
+                className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
+              />
+            </div>
+            {errors.firstname && (
+              <p
+                className="text-center "
+                style={{ color: 'rgb(255 191 124)', marginLeft: '80px' }}
+              >
+                {errors.firstname}
+              </p>
+            )}
+            <div className="input">
+              <label className="text-white">Tên</label>
+              <input
+                type="text"
+                value={lastname}
+                onChange={handleLastnameChange}
+                className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
+              />
+            </div>
+            {errors.lastname && (
+              <p
+                className=" text-center "
+                style={{ color: 'rgb(255 191 124)', marginLeft: '80px' }}
+              >
+                {errors.lastname}
+              </p>
+            )}
+            <div className="input">
+              <label className="text-white">Email</label>
+              <input
+                pattern="@"
+                type="email"
+                value={email}
+                onChange={handleEmailChange}
+                className="h-8 w-[45%] outline-0 bg-[#ebebeb] p-2 rounded"
+              />
+            </div>
+            {errors.email && (
+              <p
+                className=" text-center "
+                style={{ color: 'rgb(255 191 124)', marginLeft: '90px' }}
+              >
+                {errors.email}
+              </p>
+            )}
+            <div className="btn_submit">
+              <button
+                className={`w-fit ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                type="submit"
+                onClick={handleSentOtp}
+                disabled={loading}
+              >
+                {loading ? 'Đang gửi...' : 'Đăng Ký'}
+              </button>
+            </div>
+          </>
+        )}
       </div>
-    </Helmet>
+    </div>
   )
 }
 
