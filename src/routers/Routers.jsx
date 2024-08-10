@@ -72,12 +72,9 @@ const Routers = () => {
   }, [])
 
   useEffect(() => {
-    if (!isLoggedIn) {
-      if (location.pathname !== '/login') {
-        navigate('/login')
-      }
-    } else {
+    if (isLoggedIn) {
       if (role === 'MANAGER' || role === 'STAFF') {
+        // Redirect to /manager if the user is a manager or staff and is on /buynow or /
         if (location.pathname === '/buynow' || location.pathname === '/') {
           navigate('/manager')
         }
@@ -87,7 +84,6 @@ const Routers = () => {
         }
       }
     }
-
     if (role === 'CUSTOMER') {
       if (location.pathname.startsWith('/manager')) {
         navigate('/home')
