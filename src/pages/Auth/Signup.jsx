@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import './authStyle.css'
 import axios from 'axios'
 import { useState } from 'react'
 
