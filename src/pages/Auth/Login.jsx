@@ -111,7 +111,7 @@ const Login = () => {
     setLoading(true)
     try {
       const response = await axios.post(
-        'http://localhost:9999/api/auth/forgot-password',
+        'https://watchshop-backend.onrender.com:9999/api/auth/forgot-password',
         { email }
       )
       const { code, message } = response.data

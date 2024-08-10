@@ -74,7 +74,7 @@ const Signup = () => {
 
     try {
       const otpResponse = await axios.post(
-        'http://localhost:9999/api/auth/sent-otp',
+        'https://watchshop-backend.onrender.com/api/auth/sent-otp',
         {
           email
         }
@@ -94,7 +94,7 @@ const Signup = () => {
   const handleSignup = async () => {
     try {
       const response = await axios.post(
-        'http://localhost:9999/api/auth/sign-up',
+        'https://watchshop-backend.onrender.com/api/auth/sign-up',
         {
           username,
           password,
