@@ -46,7 +46,7 @@ import OrderReceiveShipper from '../Admin/pages/OrderReceiveShipper'
 
 const Routers = () => {
   return (
-    <Router basename="/wachshop-react">
+    <Router>
       <Routes>
         <Route path="*" element={<Page404 />} />
         <Route index element={<Login />} />
