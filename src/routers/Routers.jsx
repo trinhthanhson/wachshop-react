@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Home from '../pages/Home'
 import About from '../pages/About/About'
 import Origin from '../pages/About/Origin'
@@ -46,76 +46,71 @@ import OrderReceiveShipper from '../Admin/pages/OrderReceiveShipper'
 
 const Routers = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="*" element={<Page404 />} />
-        <Route index element={<Login />} />
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/profile" element={<CustomerProfile />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/origin" element={<Origin />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/jobs" element={<Jobs />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/news/:id" element={<NewDetail />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<ProductDetail />} />
-        <Route path="/buynow" element={<OrderBuyNow />} />
-        <Route
-          path="/products/:category_id/category"
-          element={<ProductDetailByCategory />}
-        />
-        <Route path="/products/:brand_id/brand" element={<ProductByBrand />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/discover" element={<Discover />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/orders-history" element={<OrdersHistory />} />
-        <Route path="/order/:id" element={<OrderDetail />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/manager/shipper" element={<OrderAcceptShipper />} />
-        <Route path="/manager/shipper/:id" element={<OrderShipperDetail />} />
+    <Routes>
+      <Route path="*" element={<Page404 />} />
+      <Route index element={<Login />} />
+      <Route path="/" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/profile" element={<CustomerProfile />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/origin" element={<Origin />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/jobs" element={<Jobs />} />
+      <Route path="/news" element={<News />} />
+      <Route path="/news/:id" element={<NewDetail />} />
+      <Route path="/menu" element={<Menu />} />
+      <Route path="/products" element={<Products />} />
+      <Route path="/products/:id" element={<ProductDetail />} />
+      <Route path="/buynow" element={<OrderBuyNow />} />
+      <Route
+        path="/products/:category_id/category"
+        element={<ProductDetailByCategory />}
+      />
+      <Route path="/products/:brand_id/brand" element={<ProductByBrand />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/discover" element={<Discover />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/orders-history" element={<OrdersHistory />} />
+      <Route path="/order/:id" element={<OrderDetail />} />
+      <Route path="/checkout" element={<Checkout />} />
+      <Route path="/manager/shipper" element={<OrderAcceptShipper />} />
+      <Route path="/manager/shipper/:id" element={<OrderShipperDetail />} />
 
-        <Route
-          path="/manager/shipper/receive"
-          element={<OrderReceiveShipper />}
-        />
+      <Route
+        path="/manager/shipper/receive"
+        element={<OrderReceiveShipper />}
+      />
 
-        <Route path="/manager" element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="/manager/products" element={<AllProducts />} />
-          <Route path="/manager/create-product" element={<CreateProduct />} />
-          <Route
-            path="/manager/update-product/:id"
-            element={<UpdateProduct />}
-          />
-          <Route
-            path="/manager/user-customer/:id"
-            element={<AdminUserCustomerDetail />}
-          />
-          <Route
-            path="/manager/user-staff/:id"
-            element={<AdminUserStaffDetail />}
-          />
-          <Route path="/manager/product/:id" element={<AdminProductDetail />} />
-          <Route
-            path="/manager/coupon-detail/:id"
-            element={<AllCouponDetail />}
-          />
-          <Route path="/manager/orders" element={<AllOrder />} />
-          <Route path="/manager/order/:id" element={<AdminOrderDetail />} />
-          <Route path="/manager/customers" element={<AllCustomers />} />
-          <Route path="/manager/staffs" element={<AllStaff />} />
-          <Route path="/manager/category" element={<AllCategory />} />
-          <Route path="/manager/brand" element={<AllBrand />} />
-          <Route path="/manager/profile" element={<StaffProfile />} />
-          <Route path="/manager/coupons" element={<AllCoupons />} />
-          <Route path="/manager/create-coupon" element={<CreateCoupon />} />
-        </Route>
-      </Routes>
-    </Router>
+      <Route path="/manager" element={<Layout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="/manager/products" element={<AllProducts />} />
+        <Route path="/manager/create-product" element={<CreateProduct />} />
+        <Route path="/manager/update-product/:id" element={<UpdateProduct />} />
+        <Route
+          path="/manager/user-customer/:id"
+          element={<AdminUserCustomerDetail />}
+        />
+        <Route
+          path="/manager/user-staff/:id"
+          element={<AdminUserStaffDetail />}
+        />
+        <Route path="/manager/product/:id" element={<AdminProductDetail />} />
+        <Route
+          path="/manager/coupon-detail/:id"
+          element={<AllCouponDetail />}
+        />
+        <Route path="/manager/orders" element={<AllOrder />} />
+        <Route path="/manager/order/:id" element={<AdminOrderDetail />} />
+        <Route path="/manager/customers" element={<AllCustomers />} />
+        <Route path="/manager/staffs" element={<AllStaff />} />
+        <Route path="/manager/category" element={<AllCategory />} />
+        <Route path="/manager/brand" element={<AllBrand />} />
+        <Route path="/manager/profile" element={<StaffProfile />} />
+        <Route path="/manager/coupons" element={<AllCoupons />} />
+        <Route path="/manager/create-coupon" element={<CreateCoupon />} />
+      </Route>
+    </Routes>
   )
 }
 
