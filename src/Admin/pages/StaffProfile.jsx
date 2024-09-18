@@ -52,7 +52,7 @@ const StaffProfile = () => {
   const handleSave = async () => {
     try {
       const response = await axios.put(
-        `https://watchshop-backend.onrender.com/api/staff/user/profile/update`,
+        `http://3.26.61.226:8080/api/staff/user/profile/update`,
         formData,
         {
           headers: {

@@ -8,7 +8,7 @@ function* updateProduct(action) {
 
     const response = yield call(() =>
       fetch(
-        `https://watchshop-backend.onrender.com/api/staff/product/${id}/update`,
+        `http://3.26.61.226:8080/api/staff/product/${id}/update`,
         {
           method: 'PUT',
           headers: {

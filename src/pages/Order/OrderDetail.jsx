@@ -54,7 +54,7 @@ const OrderDetail = () => {
       if (ratingData.isReviewed) {
         // Update the existing review
         response = await axios.put(
-          `https://watchshop-backend.onrender.com/api/customer/review/${ratingData.order_detail_id}/update`,
+          `http://3.26.61.226:8080/api/customer/review/${ratingData.order_detail_id}/update`,
           {
             content: ratingData.content,
             star: ratingData.rating
@@ -68,7 +68,7 @@ const OrderDetail = () => {
       } else {
         // Add a new review
         response = await axios.post(
-          'https://watchshop-backend.onrender.com/api/customer/review/add',
+          'http://3.26.61.226:8080/api/customer/review/add',
           {
             order_detail_id: ratingData.order_detail_id,
             product_id: ratingData.productId,
@@ -106,7 +106,7 @@ const OrderDetail = () => {
       const token = localStorage.getItem('token')
       axios
         .put(
-          `https://watchshop-backend.onrender.com/api/customer/order/${id}/status`,
+          `http://3.26.61.226:8080/api/customer/order/${id}/status`,
           { status: 6 },
           {
             headers: {
@@ -126,7 +126,7 @@ const OrderDetail = () => {
     try {
       const token = localStorage.getItem('token')
       const response = await axios.get(
-        `https://watchshop-backend.onrender.com/api/customer/review/${order_detail_id}/detail`,
+        `http://3.26.61.226:8080/api/customer/review/${order_detail_id}/detail`,
         {
           headers: {
             Authorization: `Bearer ${token}`

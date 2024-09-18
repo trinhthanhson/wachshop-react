@@ -15,7 +15,7 @@ function* getAllProductsSaga() {
 
     const response = yield call(
       axios.get,
-      'https://watchshop-backend.onrender.com/api/user/product/all',
+      'http://3.26.61.226:8080/api/user/product/all',
       {
         headers: {
           Authorization: `Bearer ${token}`

@@ -41,7 +41,7 @@ const Login = () => {
         setIsLoggingIn(true)
 
         const response = await axios.post(
-          'https://watchshop-backend.onrender.com/api/auth/sign-in',
+          'http://3.26.61.226:8080/api/auth/sign-in',
           {
             username,
             password

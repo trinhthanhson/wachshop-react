@@ -21,7 +21,7 @@ const AdminUserCustomerDetail = () => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          `https://watchshop-backend.onrender.com/api/staff/customer/${id}/find`,
+          `http://3.26.61.226:8080/api/staff/customer/${id}/find`,
           {
             headers: {
               Authorization: `Bearer ${token}` // Add the Authorization header
@@ -59,7 +59,7 @@ const AdminUserCustomerDetail = () => {
     e.preventDefault()
     try {
       await axios.put(
-        `https://watchshop-backend.onrender.com/api/staff/user/${id}/update`,
+        `http://3.26.61.226:8080/api/staff/user/${id}/update`,
         {
           status: formData.status // Send the updated status
         },

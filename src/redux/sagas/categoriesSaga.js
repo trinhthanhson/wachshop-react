@@ -13,7 +13,7 @@ function* getAllCategoriesSaga() {
 
     const response = yield call(
       axios.get,
-      'https://watchshop-backend.onrender.com/api/user/category/all',
+      'http://3.26.61.226:8080/api/user/category/all',
       {
         headers: {
           Authorization: `Bearer ${token}`

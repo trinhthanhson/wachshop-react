@@ -37,7 +37,7 @@ const ProductByCategory = () => {
       const fetchSearchResults = async () => {
         try {
           const response = await axios.get(
-            'https://watchshop-backend.onrender.com/api/user/product/find',
+            'http://3.26.61.226:8080/api/user/product/find',
             {
               params: { keyword: searchKeyword }
             }

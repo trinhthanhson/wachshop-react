@@ -70,7 +70,7 @@ const AllStaff = () => {
 
     try {
       const response = await axios.post(
-        'https://watchshop-backend.onrender.com/api/manager/staff/add',
+        'http://3.26.61.226:8080/api/manager/staff/add',
         newStaff,
         {
           headers: {
