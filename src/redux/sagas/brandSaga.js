@@ -9,7 +9,7 @@ function* getAllBrandSaga() {
     const token = localStorage.getItem('token')
     const response = yield call(
       axios.get,
-      'http://3.26.61.226:8080/api/user/brand/all',
+      'http://3.26.11.162:8080/api/user/brand/all',
       {
         headers: {
           Authorization: `Bearer ${token}`

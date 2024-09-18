@@ -8,7 +8,7 @@ function* addProduct(action) {
 
     // Gọi API để thêm sản phẩm
     const response = yield call(() =>
-      fetch(`http://3.26.61.226:8080/api/staff/product/add`, {
+      fetch(`http://3.26.11.162:8080/api/staff/product/add`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

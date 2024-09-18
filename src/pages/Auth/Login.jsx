@@ -41,7 +41,7 @@ const Login = () => {
         setIsLoggingIn(true)
 
         const response = await axios.post(
-          'http://3.26.61.226:8080/api/auth/sign-in',
+          'http://3.26.11.162:8080/api/auth/sign-in',
           {
             username,
             password

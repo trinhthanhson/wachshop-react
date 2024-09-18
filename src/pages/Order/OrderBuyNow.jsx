@@ -83,7 +83,7 @@ const OrderBuyNow = () => {
 
     try {
       const response = await fetch(
-        'http://3.26.61.226:8080/api/customer/order/buy-now',
+        'http://3.26.11.162:8080/api/customer/order/buy-now',
         {
           method: 'POST',
           headers: {
@@ -130,7 +130,7 @@ const OrderBuyNow = () => {
 
     try {
       const response = await fetch(
-        'http://3.26.61.226:8080/api/customer/payment/submit',
+        'http://3.26.11.162:8080/api/customer/payment/submit',
         {
           method: 'POST',
           headers: {

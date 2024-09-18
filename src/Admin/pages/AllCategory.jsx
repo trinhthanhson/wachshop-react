@@ -36,7 +36,7 @@ const AllCategory = () => {
     try {
       const token = localStorage.getItem('token')
       const response = await axios.post(
-        'http://3.26.61.226:8080/api/staff/category/add',
+        'http://3.26.11.162:8080/api/staff/category/add',
         {
           category_name: newCategoryName
         },
@@ -81,7 +81,7 @@ const AllCategory = () => {
       const token = localStorage.getItem('token')
 
       const response = await axios.put(
-        `http://3.26.61.226:8080/api/staff/category/${categoryId}/update`,
+        `http://3.26.11.162:8080/api/staff/category/${categoryId}/update`,
         {
           category_name: newCategoryName
         },
@@ -118,7 +118,7 @@ const AllCategory = () => {
     if (confirmDelete) {
       try {
         await axios.delete(
-          `http://3.26.61.226:8080/api/staff/category/${categoryId}/delete`,
+          `http://3.26.11.162:8080/api/staff/category/${categoryId}/delete`,
           {
             headers: {
               Authorization: `Bearer ${token}`

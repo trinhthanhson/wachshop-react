@@ -23,7 +23,7 @@ const AllCouponDetail = () => {
     if (confirmDelete) {
       try {
         await axios.put(
-          `http://3.26.61.226:8080/api/staff/coupon/${couponId}/delete`,
+          `http://3.26.11.162:8080/api/staff/coupon/${couponId}/delete`,
           {
             status: status
           },

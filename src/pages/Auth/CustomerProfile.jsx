@@ -68,7 +68,7 @@ const CustomerProfile = () => {
   const handleSave = async () => {
     try {
       const response = await axios.put(
-        `http://3.26.61.226:8080/api/customer/update-info`,
+        `http://3.26.11.162:8080/api/customer/update-info`,
         formData,
         {
           headers: {
@@ -92,7 +92,7 @@ const CustomerProfile = () => {
     try {
       // eslint-disable-next-line no-unused-vars
       const response = await axios.put(
-        `http://3.26.61.226:8080/api/user/change-password`,
+        `http://3.26.11.162:8080/api/user/change-password`,
         passwordData,
         {
           headers: {

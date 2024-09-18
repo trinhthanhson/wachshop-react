@@ -14,7 +14,7 @@ const CartItem = ({ cart, onQuantityChange, onDeleteSuccess }) => {
     if (newQuantity >= 1) {
       try {
         const apiUrl =
-          'http://3.26.61.226:8080/api/customer/cart/update/quantity'
+          'http://3.26.11.162:8080/api/customer/cart/update/quantity'
         const requestBody = {
           product_id: product?.product_id,
           quantity: newQuantity
@@ -40,7 +40,7 @@ const CartItem = ({ cart, onQuantityChange, onDeleteSuccess }) => {
   const handleDelete = async () => {
     try {
       const apiUrl =
-        'http://3.26.61.226:8080/api/customer/cart/delete/item'
+        'http://3.26.11.162:8080/api/customer/cart/delete/item'
       const requestBody = {
         product_id: product?.product_id
       }

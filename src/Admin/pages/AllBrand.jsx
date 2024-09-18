@@ -35,7 +35,7 @@ const AllBrand = () => {
     try {
       const token = localStorage.getItem('token')
       const response = await axios.post(
-        'http://3.26.61.226:8080/api/staff/brand/add',
+        'http://3.26.11.162:8080/api/staff/brand/add',
         {
           brand_name: newBrandName
         },
@@ -78,7 +78,7 @@ const AllBrand = () => {
       const token = localStorage.getItem('token')
 
       const response = await axios.put(
-        `http://3.26.61.226:8080/api/staff/brand/${brandId}/update`,
+        `http://3.26.11.162:8080/api/staff/brand/${brandId}/update`,
         {
           brand_name: newBrandName
         },
@@ -114,7 +114,7 @@ const AllBrand = () => {
     if (confirmDelete) {
       try {
         await axios.delete(
-          `http://3.26.61.226:8080/api/staff/brand/${brandId}/delete`,
+          `http://3.26.11.162:8080/api/staff/brand/${brandId}/delete`,
           {
             headers: {
               Authorization: `Bearer ${token}`
