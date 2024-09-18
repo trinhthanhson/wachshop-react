@@ -8,7 +8,7 @@ function* updateProduct(action) {
 
     const response = yield call(() =>
       fetch(
-        `http://3.26.11.162:8080/api/staff/product/${id}/update`,
+        `http://3.25.162.185:8080/api/staff/product/${id}/update`,
         {
           method: 'PUT',
           headers: {

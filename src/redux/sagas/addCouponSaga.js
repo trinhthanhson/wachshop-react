@@ -7,7 +7,7 @@ function* addCoupon(action) {
 
     const response = yield call(
       axios.post,
-      'http://3.26.11.162:8080/api/staff/coupon/add',
+      'http://3.25.162.185:8080/api/staff/coupon/add',
       action.payload,
       {
         headers: {

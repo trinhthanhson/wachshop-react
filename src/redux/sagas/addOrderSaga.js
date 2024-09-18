@@ -7,7 +7,7 @@ function* addOrder(action) {
     const token = localStorage.getItem('token')
     const response = yield call(
       axios.post,
-      'http://3.26.11.162:8080/api/order/create',
+      'http://3.25.162.185:8080/api/order/create',
       action.payload,
       {
         headers: {

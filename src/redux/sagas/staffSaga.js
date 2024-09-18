@@ -10,7 +10,7 @@ function* getAllStaffsSaga() {
 
     const response = yield call(
       axios.get,
-      'http://3.26.11.162:8080/api/manager/staff/all',
+      'http://3.25.162.185:8080/api/manager/staff/all',
       {
         headers: {
           Authorization: `Bearer ${token}`

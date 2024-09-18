@@ -14,7 +14,7 @@ function* getCouponDetailSaga(action) {
 
     const response = yield call(
       axios.get,
-      `http://3.26.11.162:8080/api/staff/coupon/${id}/detail`,
+      `http://3.25.162.185:8080/api/staff/coupon/${id}/detail`,
       {
         headers: {
           Authorization: `Bearer ${token}`

@@ -15,7 +15,7 @@ function* getAllProductsSaga() {
 
     const response = yield call(
       axios.get,
-      'http://3.26.11.162:8080/api/user/product/all',
+      'http://3.25.162.185:8080/api/user/product/all',
       {
         headers: {
           Authorization: `Bearer ${token}`

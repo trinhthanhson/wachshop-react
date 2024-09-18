@@ -14,7 +14,7 @@ function* addCart(action) {
 
     const response = yield call(
       axios.put,
-      'http://3.26.11.162:8080/api/customer/cart/add',
+      'http://3.25.162.185:8080/api/customer/cart/add',
       body,
       {
         headers: {

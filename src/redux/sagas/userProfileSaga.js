@@ -13,7 +13,7 @@ function* getUserProfileSaga() {
 
     const response = yield call(
       axios.get,
-      'http://3.26.11.162:8080/api/user/find',
+      'http://3.25.162.185:8080/api/user/find',
       {
         headers: {
           Authorization: `Bearer ${token}`

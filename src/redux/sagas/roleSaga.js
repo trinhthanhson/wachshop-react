@@ -10,7 +10,7 @@ function* getAllRoleSaga() {
 
     const response = yield call(
       axios.get,
-      'http://3.26.11.162:8080/api/manager/role/all',
+      'http://3.25.162.185:8080/api/manager/role/all',
       {
         headers: {
           Authorization: `Bearer ${token}`

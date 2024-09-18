@@ -70,7 +70,7 @@ const AllStaff = () => {
 
     try {
       const response = await axios.post(
-        'http://3.26.11.162:8080/api/manager/staff/add',
+        'http://3.25.162.185:8080/api/manager/staff/add',
         newStaff,
         {
           headers: {

@@ -74,7 +74,7 @@ const Signup = () => {
 
     try {
       const otpResponse = await axios.post(
-        'http://3.26.11.162:8080/api/auth/sent-otp',
+        'http://3.25.162.185:8080/api/auth/sent-otp',
         {
           email
         }
@@ -94,7 +94,7 @@ const Signup = () => {
   const handleSignup = async () => {
     try {
       const response = await axios.post(
-        'http://3.26.11.162:8080/api/auth/sign-up',
+        'http://3.25.162.185:8080/api/auth/sign-up',
         {
           username,
           password,

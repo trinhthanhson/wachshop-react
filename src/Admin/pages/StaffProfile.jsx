@@ -52,7 +52,7 @@ const StaffProfile = () => {
   const handleSave = async () => {
     try {
       const response = await axios.put(
-        `http://3.26.11.162:8080/api/staff/user/profile/update`,
+        `http://3.25.162.185:8080/api/staff/user/profile/update`,
         formData,
         {
           headers: {

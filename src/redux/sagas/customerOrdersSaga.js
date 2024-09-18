@@ -13,7 +13,7 @@ function* getCustomerOrdersSaga() {
 
     const response = yield call(
       axios.get,
-      'http://3.26.11.162:8080/api/customer/order/all',
+      'http://3.25.162.185:8080/api/customer/order/all',
       {
         headers: {
           Authorization: `Bearer ${token}`

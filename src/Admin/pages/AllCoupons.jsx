@@ -24,7 +24,7 @@ const AllCoupons = () => {
 
     try {
       await axios.delete(
-        `http://3.26.11.162:8080/api/staff/coupon/${couponId}/delete`,
+        `http://3.25.162.185:8080/api/staff/coupon/${couponId}/delete`,
         {
           headers: {
             Authorization: `Bearer ${token}` // Thêm header Authorization
